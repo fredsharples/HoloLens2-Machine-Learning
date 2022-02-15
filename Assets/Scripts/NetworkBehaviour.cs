@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class NetworkBehaviour : MonoBehaviour
 {
     // Public fields
-    public float ProbabilityThreshold = 0.5f;
+    public float ProbabilityThreshold = 0.4f;
     public Vector2 InputFeatureSize = new Vector2(224, 224);
     public Text StatusBlock;
 
@@ -103,6 +103,7 @@ public class NetworkBehaviour : MonoBehaviour
                 StatusBlock.text = $"Label: {result.PredictionLabel} " +
                 $"Probability: {Math.Round(result.PredictionProbability, 3) * 100}% " +
                 $"Inference time: {result.PredictionTime} ms";
+           
             }, false);
         }
         catch (Exception ex)
